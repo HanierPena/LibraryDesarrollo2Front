@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Cookies from 'universal-cookie';
+import Libro from '../components/Libro';
 
 const cookies = new Cookies();
 
@@ -28,7 +29,7 @@ class Menu extends Component {
         return (
             <div>
                 Menu Principal
-
+                <Libro usuario={cookies.get('nombre')}/>
                 <br />
                 <button onClick={()=>this.cerrarSesion()}>Cerrar Sesión</button>
             </div>
