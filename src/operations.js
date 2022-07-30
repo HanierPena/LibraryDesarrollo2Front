@@ -5,7 +5,7 @@ let pares = (x) => {
      return resp
     }
 
-   resp = "Los numeros son :"
+   resp = "Los numeros son hola:"
    let i = 0;
    do {
    if ( i % 2 == 0){
