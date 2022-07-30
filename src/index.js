@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import Routesz from './routes/Routes';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container); 
+root.render(
   <React.StrictMode>
     <Routesz />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

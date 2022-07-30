@@ -7,8 +7,8 @@ function Routesz() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" component={Login}/>
-        <Route exact path="/menu" component={Menu}/>
+        <Route exact path="/" element=<Login /> />
+        <Route exact path="/menu" element=<Menu /> />
       </Routes>
     </BrowserRouter>
   );
