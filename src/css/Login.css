@@ -10,4 +10,52 @@
   
   .containerSecundario{
     text-align: center;
-  }
+}
+body{
+  background-image: url('../resources/fondo.jpg');
+  background-size: cover;
+}
+.nav{
+  background-color: #f79c55;
+  
+}
+.nav-item{
+  color: beige !important;
+}
+.ul_{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-grow: 1;
+  
+}
+li{
+  justify-content: center;
+  display: block;
+  list-style: none;
+  font-size: 18px;
+  padding-left: 100px;
+  line-height: 80px;
+  
+}
+li a{
+  text-decoration: none;
+  color:white;
+}
+li a:hover {
+  font-size:20px;
+  color:#100;
+}
+.btn_cerrar{
+  border-radius: 7rem;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: rgb(247, 190, 104);
+}

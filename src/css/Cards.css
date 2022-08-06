@@ -1,0 +1,63 @@
+.card{
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgb(221, 216, 216);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition:  transform 200ms ease-in;
+    flex-grow: 1;
+}
+.card__title{
+    font-size: 25px;
+    text-align: center;
+
+}
+.card__description{
+    padding: 0 1rem;
+}
+
+.card__image{
+    height: 30vh;
+    max-width: 120%;
+    object-fit:scale-down;
+    justify-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+   
+
+*,
+*::before,
+*::after{
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+    margin: 0.2rem;
+
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+    gap:2rem;
+    justify-content: center;
+}
+.btnAgregar{
+    border-radius: 7rem;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: rgb(247, 190, 104);
+}
