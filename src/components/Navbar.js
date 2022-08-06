@@ -3,10 +3,22 @@ import { MenuItems } from "../resources/MenuItems";
 import { Tabs, Tab } from "react-bootstrap";
 import '../css/Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Cookies from 'universal-cookie';
 
-export default function Navbar() {
-  return (
-    <div className="nav">
+
+const cookies = new Cookies();
+class Navbar extends React.Component{
+
+    cerrarSesion=()=>{
+        cookies.remove('id', {path: "/"});
+        cookies.remove('apellido_paterno', {path: "/"});
+        cookies.remove('apellido_materno', {path: "/"});
+        cookies.remove('nombre', {path: "/"});
+        cookies.remove('username', {path: "/"});
+        window.location.href='./';
+    }
+    render (){
+    return <div className="nav">
         <ul className="ul_">
             <li>
                 <a href="#">Inicio</a>
@@ -24,5 +36,7 @@ export default function Navbar() {
 
 
     </div>
-  );
+    }
+  
 }
+export default Navbar;
