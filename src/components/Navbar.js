@@ -17,21 +17,30 @@ class Navbar extends React.Component{
         cookies.remove('username', {path: "/"});
         window.location.href='./';
     }
+    consultarLibro=()=>{
+        window.location.href='./consulta';
+    }
     render (){
     return <div className="nav">
         <ul className="ul_">
             <li>
-                <a href="#">Inicio</a>
+               <a href="#" >Inicio</a>
             </li>
             <li>
-                <a href="#">Consulta</a>
+
+                <a href="#" onClick={()=> this.consultarLibro()}>Consulta</a>
             </li>
             <li>
                 <a href="#">Más</a>
             </li>
 
         </ul>
-        <button className="btn_cerrar" onClick={()=>this.cerrarSesion()}>Cerrar Sesión</button>
+        <div className="nombreInicio"> 
+            <h1 >Hola, {cookies.get('nombre')} </h1>
+        </div>
+        <div className="btnCerrar">
+        <a onClick={()=>this.cerrarSesion()}>Cerrar Sesión</a>
+        </div>
 
 
 

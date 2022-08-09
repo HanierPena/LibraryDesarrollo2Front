@@ -26,11 +26,11 @@ class Libro extends React.Component{
         />
         <div>
             <button className='btnAgregar' onClick={()=>this.agregar()}>Agregar</button>
-        </div>
+        
         {booleanStatus ?  (
-            <button onClick={()=>this.eliminar()}>Eliminar</button>
+            <button className='btnAgregar' onClick={()=>this.eliminar()}>Eliminar</button>
         ):(<h1></h1>)}
-       
+       </div>
        
        </div>
        

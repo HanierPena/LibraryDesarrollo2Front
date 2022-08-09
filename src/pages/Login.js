@@ -59,6 +59,8 @@ class Login extends Component {
 
     render() {
         return (
+            <div>
+    <h1 className='titulo'>Library</h1>    
     <div className="containerPrincipal">
         <div className="containerSecundario">
           <div className="form-group">
@@ -83,6 +85,7 @@ class Login extends Component {
             <button className="btn btn-primary" onClick={()=> this.iniciarSesion()}>Iniciar Sesión</button>
           </div>
         </div>
+      </div>
       </div>
         );
     }

@@ -46,11 +46,5 @@ body {
     text-decoration: none;
   }
   li:hover {
-    background-color: white;
-  }
-  li:hover .nav-links {
-    color: black;
-  }
-  li:hover .nav-links-mobile {
-    color: black;
+    background-color: rgb(231, 178, 98);
   }

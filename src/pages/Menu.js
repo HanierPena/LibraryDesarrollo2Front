@@ -7,7 +7,6 @@ import Navbar from '../components/Navbar';
 const cookies = new Cookies();
 
 class Menu extends Component {
-    
 
     componentDidMount() {
         if(!cookies.get('username')){
