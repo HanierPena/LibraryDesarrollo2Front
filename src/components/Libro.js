@@ -11,7 +11,6 @@ class Libro extends React.Component{
         
     const userNameStatus = this.props.usuario;
     let booleanStatus =false;
-    console.log(this.props.usuario);
     if(userNameStatus === 'Carlos'){
         
         booleanStatus=false;

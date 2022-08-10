@@ -7,19 +7,12 @@ import axios from 'axios';
 const cookies = new Cookies();
 const baseUrl = "https://hiderbrandon-library.herokuapp.com/api/";
 let key = cookies.get('key');
-let getBook = async () => {
-    const books = await axios.get(baseUrl, { headers: { "Authorization": `token ${key}` } })
-};
-
-console.log(getBook());
-
 
 class Menu extends Component {
-
-
-
-
-    componentDidMount() {
+    
+    async componentDidMount() {
+    let response = await axios.get(baseUrl, { headers: { "Authorization": `token ${key}` } });
+    console.log(response.data);
         if (!cookies.get('username')) {
             window.location.href = "./";
         }

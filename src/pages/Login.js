@@ -33,7 +33,6 @@ class Login extends Component {
                 email: "hanierpe@gmail.com"
             })
             .then(async response => {
-                console.log(response.data.key);
                 let key = response.data.key
                 cookies.set('key', key, { path: "/" })
                 const userInfo = await axios.get(baseUrl + "user/",
@@ -42,7 +41,6 @@ class Login extends Component {
                 return userInfo;
             })
             .then(response => {
-                console.log(response)
                 if (response.status == 200) {
                     cookies.set('id', response.data.pk, { path: "/" });
                     cookies.set('apellido_paterno', response.data.last_name, { path: "/" });
