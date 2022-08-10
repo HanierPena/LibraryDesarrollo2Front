@@ -35,6 +35,7 @@ class Login extends Component {
             .then(async response => {
                 console.log(response.data.key);
                 let key = response.data.key
+                cookies.set('key', key, { path: "/" })
                 const userInfo = await axios.get(baseUrl + "user/",
                     { headers: { "Authorization": `token ${key}` } })
                 console.log(userInfo);
@@ -43,7 +44,6 @@ class Login extends Component {
             .then(response => {
                 console.log(response)
                 if (response.status == 200) {
-                    var respuesta = response[0];
                     cookies.set('id', response.data.pk, { path: "/" });
                     cookies.set('apellido_paterno', response.data.last_name, { path: "/" });
                     cookies.set('nombre', response.data.first_name, { path: "/" });
