@@ -20,11 +20,14 @@ class Navbar extends React.Component{
     consultarLibro=()=>{
         window.location.href='./consulta';
     }
+    inicio=()=>{
+        window.location.href='./menu';
+    }
     render (){
     return <div className="nav">
         <ul className="ul_">
             <li>
-               <a href="#" >Inicio</a>
+               <a href="#" onClick={()=> this.inicio()}>Inicio</a>
             </li>
             <li>
 
