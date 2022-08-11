@@ -33,7 +33,9 @@ class Menu extends Component {
         return (
             <div>
                 <Navbar />
-                {this.state.Books.map((mybook) => <Libro book={mybook} key={mybook.title} />)}
+                <div className='row'>                    
+                    {this.state.Books.map((mybook) => <Libro book={mybook}/>)}
+                </div>
             </div>
         );
     }

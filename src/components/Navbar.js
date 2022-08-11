@@ -5,16 +5,18 @@ import '../css/Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'universal-cookie';
 
-
+const baseUrl = "https://hiderbrandon-library.herokuapp.com/api/dj-rest-auth/";
 const cookies = new Cookies();
 class Navbar extends React.Component{
 
-    cerrarSesion=()=>{
+    cerrarSesion= async ()=>{
+        cookies.remove('key', {path: "/"});
         cookies.remove('id', {path: "/"});
         cookies.remove('apellido_paterno', {path: "/"});
         cookies.remove('apellido_materno', {path: "/"});
         cookies.remove('nombre', {path: "/"});
         cookies.remove('username', {path: "/"});
+        await axios.get(baseUrl + "logout/",{ headers: { "Authorization": `token ${key}` } });
         window.location.href='./';
     }
     consultarLibro=()=>{

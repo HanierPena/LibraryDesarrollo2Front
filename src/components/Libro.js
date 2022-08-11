@@ -10,6 +10,9 @@ class Libro extends React.Component{
     render(){
         
     const userNameStatus = this.props.usuario;
+    const img = this.props.book.image;
+    const title = this.props.book.title;
+    const description = this.props.book.description;
     let booleanStatus =false;
     if(userNameStatus === 'Carlos'){
         
@@ -17,11 +20,11 @@ class Libro extends React.Component{
     }else{
         booleanStatus=true;
     }
-       return <div className='wrapper'>
+       return <div className='col-3'>
         <Cards 
-        img = "https://imagessl4.casadellibro.com/a/l/t7/44/9788415594444.jpg"
-        title = "BUSCANDO A ALASKA"
-        description = "Miles ve cómo su vida transcurre sin emoción alguna. Su obsesión con memorizar las últimas palabras de personajes ilustres le lleva a querer encontrar su Gran Quizá (como dijo François Rabelais justo antes de morir). Decide mudarse a Culver Creek"
+        img = {img}
+        title = {title}
+        description = {description}
         />
         <div>
             <button className='btnAgregar' onClick={()=>this.agregar()}>Agregar</button>
