@@ -9,10 +9,21 @@ const baseUrl = "https://hiderbrandon-library.herokuapp.com/api/";
 let key = cookies.get('key');
 
 class Menu extends Component {
-    
+
+    constructor(props) {
+        super(props);
+        this.state = { Books: [] };
+    }
+
+
     async componentDidMount() {
-    let response = await axios.get(baseUrl, { headers: { "Authorization": `token ${key}` } });
-    console.log(response.data);
+        let bookList = await axios.get(baseUrl, { headers: { "Authorization": `token ${key}` } });
+
+        this.setState(this.state.Books = bookList.data)
+        console.log(this.state.Books)
+
+
+
         if (!cookies.get('username')) {
             window.location.href = "./";
         }
@@ -22,8 +33,7 @@ class Menu extends Component {
         return (
             <div>
                 <Navbar />
-                <Libro usuario={cookies.get('nombre')} />
-                <br />
+                {this.state.Books.map((mybook) => <Libro book={mybook} key={mybook.title} />)}
             </div>
         );
     }
