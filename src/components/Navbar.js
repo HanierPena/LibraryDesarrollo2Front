@@ -4,6 +4,7 @@ import { Tabs, Tab } from "react-bootstrap";
 import '../css/Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'universal-cookie';
+import axios from 'axios';
 
 const baseUrl = "https://hiderbrandon-library.herokuapp.com/api/dj-rest-auth/";
 const cookies = new Cookies();
@@ -16,8 +17,9 @@ class Navbar extends React.Component{
         cookies.remove('apellido_materno', {path: "/"});
         cookies.remove('nombre', {path: "/"});
         cookies.remove('username', {path: "/"});
-        await axios.get(baseUrl + "logout/",{ headers: { "Authorization": `token ${key}` } });
         window.location.href='./';
+        await axios.get(baseUrl + "logout/",{ headers: { "Authorization": `token ${key}` } });
+        
     }
     consultarLibro=()=>{
         window.location.href='./consulta';
