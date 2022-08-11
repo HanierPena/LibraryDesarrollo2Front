@@ -1,36 +1,41 @@
 import React, { Component } from 'react';
 import Cookies from 'universal-cookie';
+import Libro from '../components/Libro';
+import Navbar from '../components/Navbar';
+import axios from 'axios';
 
 const cookies = new Cookies();
+const baseUrl = "https://hiderbrandon-library.herokuapp.com/api/";
+let key = cookies.get('key');
 
 class Menu extends Component {
-    cerrarSesion=()=>{
-        cookies.remove('id', {path: "/"});
-        cookies.remove('apellido_paterno', {path: "/"});
-        cookies.remove('apellido_materno', {path: "/"});
-        cookies.remove('nombre', {path: "/"});
-        cookies.remove('username', {path: "/"});
-        window.location.href='./';
+
+    constructor(props) {
+        super(props);
+        this.state = { Books: [] };
     }
 
-    componentDidMount() {
-        if(!cookies.get('username')){
-            window.location.href="./";
+
+    async componentDidMount() {
+        let bookList = await axios.get(baseUrl, { headers: { "Authorization": `token ${key}` } });
+
+        this.setState(this.state.Books = bookList.data)
+        console.log(this.state.Books)
+
+
+
+        if (!cookies.get('username')) {
+            window.location.href = "./";
         }
     }
 
     render() {
-        console.log('id: '+ cookies.get('id'));
-        console.log('apellido_paterno: '+cookies.get('apellido_paterno'));
-        console.log('apellido_materno: '+cookies.get('apellido_materno'));
-        console.log('nombre: '+cookies.get('nombre'));
-        console.log('username: '+cookies.get('username'));
         return (
             <div>
-                Menu Principal
-
-                <br />
-                <button onClick={()=>this.cerrarSesion()}>Cerrar Sesión</button>
+                <Navbar />
+                <div className='row'>                    
+                    {this.state.Books.map((mybook, i) => <Libro key={i} book={mybook}/>)}
+                </div>
             </div>
         );
     }

@@ -10,4 +10,90 @@
   
   .containerSecundario{
     text-align: center;
-  }
+}
+body{
+  background-image: url('../resources/fondo.jpg');
+  background-size: cover;
+}
+.nav{
+  background-color: #f79c55;
+  
+}
+
+.nav-item{
+  color: beige !important;
+}
+.ul_{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-grow: 1;
+  
+}
+li{
+  justify-content: center;
+  display: block;
+  list-style: none;
+  font-size: 18px;
+  padding: 0px 60px 0px 60px;
+  line-height: 80px;
+  text-align: center;
+  
+}
+li a{
+  text-decoration: none;
+  color:white;  
+}
+li a:hover{
+  text-decoration: none;
+  color:white;  
+}
+li:hover {
+  background-color:rgb(231, 178, 98);
+  color: black;
+}
+.btn_cerrar{
+  border-radius: 1rem;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  text-justify: distribute;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: rgb(247, 190, 104);
+}
+.nombreInicio h1{
+  font-size: 18px;
+  color: white;
+  padding: 25px;
+}
+.nombreInicio a{
+  font-size: 18px;
+  color: white;
+  padding: 25px;
+}
+
+.btnCerrar{
+  cursor: pointer;
+  padding: 25px;
+  color: white;
+  
+}
+.btnCerrar:hover {
+  background-color: rgb(231, 178, 98);
+}
+.titulo{
+  position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -195%);
+      padding: 40px;
+      background-color: rgba(164, 158, 158, 0.335);
+      font-size: 60px;
+      font-family: 'Courier New', Courier, monospace;
+      border: 1px;
+}
